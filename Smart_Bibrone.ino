@@ -52,33 +52,32 @@ void loop(void)
     Serial.print(celsius);
     Serial.print(degree);
     Serial.println(" C ");
-
-  // Check the right range of temperature
-  if (celsius >= 30 && celsius <= 38)
-  {
-    Serial.println("The milk is ready");
-    delay(500);
-  }
-  else if(celsius > 38)
-  {
-    Serial.println("The milk is too hot, you should let it cool");
-    digitalWrite(buzzer, HIGH);
-    delay(500);
-    digitalWrite(buzzer, LOW);
-    delay(500);
-    digitalWrite(buzzer, HIGH);
-    delay(500);
-    digitalWrite(buzzer, LOW);
-    delay(500);
-  }
-   else if(celsius < 30)
-  {
-    Serial.println("The milk is too cold, you should heat it");
-    digitalWrite(buzzer, HIGH);
-    delay(1500);
-    digitalWrite(buzzer, LOW);
-    delay(500);
-  }
+    // Check the right range of temperature
+    if (celsius >= 30 && celsius <= 38)
+    {
+      Serial.println("The milk is ready");
+      delay(1000);
+    }
+    else if(celsius > 38)
+    {
+      Serial.println("The milk is too hot, you should let it cool");
+      digitalWrite(buzzer, HIGH);
+      delay(500);
+      digitalWrite(buzzer, LOW);
+      delay(500);
+      digitalWrite(buzzer, HIGH);
+      delay(500);
+      digitalWrite(buzzer, LOW);
+      delay(500);
+    }
+     else if(celsius < 30)
+    {
+      Serial.println("The milk is too cold, you should heat it");
+      digitalWrite(buzzer, HIGH);
+      delay(1500);
+      digitalWrite(buzzer, LOW);
+      delay(500);
+    }
   
     state = 0;
     } 
